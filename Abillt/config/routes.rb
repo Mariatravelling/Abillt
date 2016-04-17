@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'demo/index' => 'demo#index'
-  get 'demo/lynda' => 'demo#lynda'
-  get 'demo/hello' => 'demo#hello'
+  #get 'demo/index' => 'demo#index'
 
-  root "demo#index"
+  root "demo#hello"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
