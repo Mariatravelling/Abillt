@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :apps
   #get 'demo/index' => 'demo#index'
 
   root "demo#hello"
