@@ -1,10 +1,5 @@
 class DemoController < ApplicationController
   
-
-  def index
-     #render('hello')  
-  end
-  
   def hello
     #@array=[1,2,3,4]
     #@id = params['id']
@@ -12,9 +7,9 @@ class DemoController < ApplicationController
      #render('index')
   end
 
-  def lynda
-     redirect_to("http://lynda.com")
+  def index
   end
 
 
+  
 end

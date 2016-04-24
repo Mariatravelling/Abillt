@@ -15,14 +15,24 @@
 
   <tbody>
     <% @apps.each do |app| %>
-      <tr>
-        <td><%= app.name %></td>
-        <td><%= app.rating %></td>
-        <td><%= app.price %></td>
-        <td><%= app.image_url %></td>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even')%>">
+        <td class="list-description">
+        <dl>
+          <dt><%= app.name %></dt>
+          <ul><%= app.rating %></ul>
+          <ul><%= app.price %></ul>
+          <td><%= image_tag app.image.url(:thumb) %></td>
+        </dl>
+        
+        <td class="image-description">
+          <%= image_tag app.image_url, :class => 'list-image' %>
+        </td>
+
+      <td class="list-actions">
         <td><%= link_to 'Show', app %></td>
         <td><%= link_to 'Edit', edit_app_path(app) %></td>
-        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
       </tr>
     <% end %>
   </tbody>

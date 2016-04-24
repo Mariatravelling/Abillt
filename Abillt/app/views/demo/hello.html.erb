@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <%= favicon_link_tag 'favicon.ico' %>
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Abillt</title>
 
     <!-- Bootstrap core CSS -->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -121,7 +121,9 @@
         <div class="col-lg-4">
         
         <h2><Strong>Blind</Strong></h2>
-        <p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-primary btn-lg" style="margin-left:900px; margin-top: 1px;">See More</a></p>
+        <p>
+        <!-- link to view all the apps -->
+        <%= link_to "See More", :action => "index", :controller=>"apps", :class=>"btn btn-primary btn-lg"%></p>
           
           <div class="container">
             <div class="row">
