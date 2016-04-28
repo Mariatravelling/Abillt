@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 gem 'sqlite3', group: :development
-gem 'pg', '0.18.1', group: :production
+#gem 'pg', '0.18.1', group: :production
 gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -13,7 +13,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
-gem 'aws-sdk'
+#gem 'aws-sdk'
 gem 'tzinfo-data'
 gem 'bootstrap-sass', '~> 3.3.6'
 

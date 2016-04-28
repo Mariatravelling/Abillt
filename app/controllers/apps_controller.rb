@@ -15,10 +15,12 @@ class AppsController < ApplicationController
   # GET /apps/new
   def new
     @app = App.new
+    @categories = Category.order(:name)
   end
 
   # GET /apps/1/edit
   def edit
+    @categories = Category.order(:name)
   end
 
   # POST /apps
@@ -69,6 +71,6 @@ class AppsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:name, :rating, :price, :image_url, :image)
+      params.require(:app).permit(:name, :rating, :price, :image_url, :image, :category_id)
     end
 end

@@ -21,12 +21,18 @@
           <dt><%= app.name %></dt>
           <ul><%= app.rating %></ul>
           <ul><%= app.price %></ul>
+          <% if app.category %>
+        <p>
+          <ul><strong>Category:</strong><%= app.category.name %></ul>
+        </p>
           <td><%= image_tag app.image.url(:thumb) %></td>
+
         </dl>
-        
-        <td class="image-description">
+                <td class="image-description">
           <%= image_tag app.image_url, :class => 'list-image' %>
         </td>
+
+        <% end %>
 
       <td class="list-actions">
         <td><%= link_to 'Show', app %></td>

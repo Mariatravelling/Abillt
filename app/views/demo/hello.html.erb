@@ -123,7 +123,7 @@
         <h2><Strong>Blind</Strong></h2>
         <p>
         <!-- link to view all the apps -->
-        <%= link_to "See More", :action => "index", :controller=>"apps", :class=>"btn btn-primary btn-lg"%></p>
+        <%= link_to "See More", :action => "index", :controller=>"apps"%></p>
           
           <div class="container">
             <div class="row">
@@ -178,7 +178,31 @@
             <div class="row">
         <div class="col-lg-4">
         
-        <h2><Strong>Blind</Strong></h2>
+        <h2><Strong>Sight Impairment</Strong></h2>
+
+        <% @apps.each do |app| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even')%>">
+        <td class="list-description">
+        <dl>
+          <ul><%= app.name%></ul>
+          <ul><%= app.rating %></ul>
+          <ul><%= app.price %></ul>
+          <% if app.category %>
+        <p>
+          <ul><strong>Category:</strong><%= app.category.name %></ul>
+        </p>
+          <td><%= image_tag app.image.url(:thumb) %></td>
+
+        </dl>
+                <td class="image-description">
+          <%= image_tag app.image_url, :class => 'list-image' %>
+        </td>
+
+        <% end %>
+        <%end%>
+
+
+
         <p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-primary btn-lg" style="margin-left:900px; margin-top: 1px;">See More</a></p>
           
           <div class="container">
