@@ -132,36 +132,31 @@
                 <div class="container">
 
                   <div class="row">
- <div class="row">
+                  <div class="row">
 
-          <% @apps.first(4).each do |app| %>
-          <div class="col-xs-3" >        
-          <a href="#" class="thumbnail" style="height:250px; width: 180px">         
-        <dl>
-          <td><%= image_tag app.image.url(:thumb) %></td>
-          <td class="image-description">
-          <%= image_tag app.image_url, :class => 'list-image' %>
-        </td>
-          <ul>App Name: <%= app.name%></ul>
-          <ul>Rating: <%= app.rating %></ul>
-          <ul><%= app.price %></ul>
-          <% if app.category %>
-        <p>
-          <ul><strong>Category:</strong><%= app.category.name %></ul>
-        </p>
-          
-
-        </dl>
-                
-          </a>
-          </div>
-
-        <% end %>
-        <%end%>
+                  <% @blind.first(4).each do |app| %>
+                  <div class="col-xs-3" >        
+                  <a href="#" class="thumbnail" style="height:250px; width: 180px">         
+                    <dl>
+                    <td><%= image_tag app.image.url(:thumb) %></td>
+                    <td class="image-description">
+                    <%= image_tag app.image_url, :class => 'list-image' %>
+                    </td>
+                    <ul>App Name: <%= app.name%></ul>
+                    <ul>Rating: <%= app.rating %></ul>
+                    <ul><%= app.price %></ul>
+                     <% if app.category %>
+                     <p>
+                    <ul><strong>Category:</strong><%= app.category.name %></ul>
+                    </p>
+                    </dl>         
+                  </a>
+                  </div>
+                <% end %>
+               <%end%>
 
                   </div>
 
-              
                   </div>
 
                 </div>
@@ -169,19 +164,14 @@
               </div>
             </div>
 
+
             <div class="row">
-        <div class="col-lg-4">
-        
-        
+        <div class="col-lg-4">  
 
         <h2><Strong>Sight Impairment</Strong></h2>
 
 
-       
-
-
-
-        <p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-primary btn-lg" style="margin-left:900px; margin-top: 1px;">See More</a></p>
+        <p><a href="apps#index" target="_blank" class="btn btn-primary btn-lg" style="margin-left:900px; margin-top: 1px;">See More</a></p>
           
           <div class="container">
             <div class="row">
@@ -192,7 +182,7 @@
 
                   <div class="row">
 
-          <% @apps.first(4).each do |app| %>
+          <% @sightImpairment.limit(4).each do |app| %>
           <div class="col-xs-3" >        
           <a href="#" class="thumbnail" style="height:250px; width: 180px">         
         <dl>
@@ -219,13 +209,64 @@
         <%end%>
 
                   </div>
-
                 </div>
+              
               </div>
               </div>
             </div>
           </div>
 
+        
+        <div class="row">
+        <div class="col-lg-4">  
+
+        <h2><Strong>learning Disabled</Strong></h2>
+
+
+        <p><a href="apps#index" target="_blank" class="btn btn-primary btn-lg" style="margin-left:900px; margin-top: 1px;">See More</a></p>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="jumbotron">
+                <div class="container">
+
+
+                  <div class="row">
+                  <div class="row">
+          <% @learningDisabled.limit(4).each do |app| %>
+          <div class="col-xs-3" >        
+          <a href="#" class="thumbnail" style="height:250px; width: 180px">         
+        <dl>
+          <td><%= image_tag app.image.url(:thumb) %></td>
+
+          <td class="image-description">
+          <%= image_tag app.image_url, :class => 'list-image' %>
+        </td>
+          <ul>App Name: <%= app.name%></ul>
+          <ul>Rating: <%= app.rating %></ul>
+          <ul><%= app.price %></ul>
+          <% if app.category %>
+        <p>
+          <ul><strong>Category:</strong><%= app.category.name %></ul>
+        </p>
+          
+
+        </dl>
+                
+          </a>
+          </div>
+
+        <% end %>
+        <%end%>
+
+                  </div>
+                </div>
+              
+              </div>
+              </div>
+            </div>
+          </div>
 
       <!-- FOOTER -->
       <footer>
