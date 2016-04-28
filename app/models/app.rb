@@ -1,4 +1,8 @@
 class App < ActiveRecord::Base
+	#attr_accessible :category_id
+
+	belongs_to :category
+
 	has_attached_file :image, styles: { 
 		medium: "300x300>",
 		thumb: "100x100>"

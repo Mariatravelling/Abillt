@@ -1,15 +1,9 @@
 class DemoController < ApplicationController
   
   def hello
-    #@array=[1,2,3,4]
-    #@id = params['id']
-    #@page = params[:page]
-     #render('index')
+  	@apps = App.all
+  	@categories = Category.order(:name)
+  	#@product = App.find(params[:id])
   end
-
-  def index
-  end
-
-
   
 end

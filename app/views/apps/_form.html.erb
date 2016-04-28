@@ -32,6 +32,12 @@
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
   </div>
+
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, @categories, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

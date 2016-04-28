@@ -123,8 +123,8 @@
         <h2><Strong>Blind</Strong></h2>
         <p>
         <!-- link to view all the apps -->
-        <%= link_to "See More", :action => "index", :controller=>"apps", :class=>"btn btn-primary btn-lg"%></p>
-          
+        
+          <p><a href="apps#index" target="_blank" class="btn btn-primary btn-lg" style="margin-left:900px; margin-top: 1px;">See More</a></p>
           <div class="container">
             <div class="row">
               <div class="col-xs-12">
@@ -132,42 +132,36 @@
                 <div class="container">
 
                   <div class="row">
-                   <div class="col-xs-3" >
+ <div class="row">
 
-                    <a href="#" class="thumbnail" style="height:250px; width: 180px">
-                      <%= image_tag("test.jpg", :alt => "rss feed", size: "165x180") %>
-                      <!-- <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px">  -->
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                    </a>
-                    </div>
+          <% @apps.first(4).each do |app| %>
+          <div class="col-xs-3" >        
+          <a href="#" class="thumbnail" style="height:250px; width: 180px">         
+        <dl>
+          <td><%= image_tag app.image.url(:thumb) %></td>
+          <td class="image-description">
+          <%= image_tag app.image_url, :class => 'list-image' %>
+        </td>
+          <ul>App Name: <%= app.name%></ul>
+          <ul>Rating: <%= app.rating %></ul>
+          <ul><%= app.price %></ul>
+          <% if app.category %>
+        <p>
+          <ul><strong>Category:</strong><%= app.category.name %></ul>
+        </p>
+          
 
-                  <div class="col-xs-3">
-                     <a href="#" class="thumbnail" style="height:250px; width: 180px">
-                      <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px"> 
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                      </a>
+        </dl>
+                
+          </a>
+          </div>
+
+        <% end %>
+        <%end%>
+
                   </div>
-                  <div class="col-xs-3">
-                    <a href="#" class="thumbnail" style="height:250px; width: 180px">
-                    <%= image_tag("BeMyEye.jpg", :alt => "rss feed", size: "1650x1800") %>
-<!--                    <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px">  -->
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                    </a>
-                  </div>
-                  <div class="col-xs-3">
-                    <a href="#" class="thumbnail" style="height:250px; width: 180px"> 
-                    <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px"> 
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                    </a>
-                   </div>
+
+              
                   </div>
 
                 </div>
@@ -178,7 +172,15 @@
             <div class="row">
         <div class="col-lg-4">
         
-        <h2><Strong>Blind</Strong></h2>
+        
+
+        <h2><Strong>Sight Impairment</Strong></h2>
+
+
+       
+
+
+
         <p><a href="http://www.tutorialrepublic.com" target="_blank" class="btn btn-primary btn-lg" style="margin-left:900px; margin-top: 1px;">See More</a></p>
           
           <div class="container">
@@ -187,41 +189,35 @@
                 <div class="jumbotron">
                 <div class="container">
 
+
                   <div class="row">
-                   <div class="col-xs-3" >
 
-                    <a href="#" class="thumbnail" style="height:250px; width: 180px">
-                      <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px"> 
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                    </a>
-                    </div>
+          <% @apps.first(4).each do |app| %>
+          <div class="col-xs-3" >        
+          <a href="#" class="thumbnail" style="height:250px; width: 180px">         
+        <dl>
+          <td><%= image_tag app.image.url(:thumb) %></td>
 
-                  <div class="col-xs-3">
-                     <a href="#" class="thumbnail" style="height:250px; width: 180px">
-                      <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px"> 
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                      </a>
-                  </div>
-                  <div class="col-xs-3">
-                    <a href="#" class="thumbnail" style="height:250px; width: 180px">
-                   <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px"> 
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                    </a>
-                  </div>
-                  <div class="col-xs-3">
-                    <a href="#" class="thumbnail" style="height:250px; width: 180px"> 
-                    <img src=".../BeMyEye.jpg" alt="Moustiers Sainte Marie" style="width:165px;height:180px"> 
-                   
-                      <p2 class="App Name">App Name</p2><br></br>
-                      <p2 class="Rating">Rating</p2>
-                    </a>
-                   </div>
+          <td class="image-description">
+          <%= image_tag app.image_url, :class => 'list-image' %>
+        </td>
+          <ul>App Name: <%= app.name%></ul>
+          <ul>Rating: <%= app.rating %></ul>
+          <ul><%= app.price %></ul>
+          <% if app.category %>
+        <p>
+          <ul><strong>Category:</strong><%= app.category.name %></ul>
+        </p>
+          
+
+        </dl>
+                
+          </a>
+          </div>
+
+        <% end %>
+        <%end%>
+
                   </div>
 
                 </div>
